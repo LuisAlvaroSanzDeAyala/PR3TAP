@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>90</y>
+      <w>260</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::AlmacenService
+--
+-repository: AlmacenOrderRepository
+--
+~getName(): List&lt;String&gt;
+~getCantidad(): List&lt;String&gt;
++placeOrder(AlmacenOrder order): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>240</y>
+      <w>230</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::Aplicacion
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>380</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+com.vaadin.tshirtshop::GlobalConstants
+--
++datos = new ArrayList&lt;String&gt;(): List&lt;String&gt;
++dispo = new ArrayList&lt;String&gt;(): List&lt;String&gt;
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>320</y>
+      <w>230</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::Ingresar
+--
+~service: AlmacenService
+~importe = "0": String
+~heading2 = new H3("Ingreso de dinero"): H3
+~listOrders = new RouterLink("Ver listado", ListadoAlmacen.class): RouterLink
+~acumulado: String
+~cambioInt: Integer
+~cambioInt2: Integer
+~cambioString: String
+~cambioString2: String
+~ingreso = new TextField("Ingreso en Euros:"): TextField
+--
++Ingresar(AlmacenOrderRepository repo): ctor
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>270</y>
+      <w>270</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::ListadoAlmacen
+--
+-repo: AlmacenOrderRepository
+~orders = new Grid(AlmacenOrder.class): Grid&lt;AlmacenOrder&gt;
+~cambioInt: Integer
+~cambioString: String
+~cambioDecimal: Float
+~euro = 1: Integer
+~ncadena: String
+~binder = new BeanValidationBinder(AlmacenOrder.class): Binder&lt;AlmacenOrder&gt;
+--
++ListadoAlmacen(AlmacenOrderRepository repo): ctor
+-plus(Button plusBtn, AlmacenOrder order, TextField total): void
+-minus(Button minusBtn, AlmacenOrder order, TextField total): void
+-cambioDivisa(Button dolarBtn, AlmacenOrder order, TextField total): void
+-modificar(Button editBtn, AlmacenOrder order, TextField total): void
+-eliminar(Button deleteBtn, AlmacenOrder order, TextField total): void
+-actualizarArray(AlmacenOrder order, Integer cambio): void
+-borrarArray(AlmacenOrder order): void
++actualizarTotal(TextField total): void
++actualizarDisponible(TextField disponible): void
+-createItems(): Collection&lt;AlmacenOrder&gt;
+-getItems(): Collection&lt;AlmacenOrder&gt;
++listOrders(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>140</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::ListOrdersView
+--
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>30</y>
+      <w>280</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::Main
+--
+~service: AlmacenService
+~binder = new BeanValidationBinder(AlmacenOrder.class): Binder&lt;AlmacenOrder&gt;
+~name = new ComboBox&lt;String&gt;("Productos"): ComboBox&lt;String&gt;
+~cantidad = new ComboBox&lt;String&gt;("Cantidad a introducir"): ComboBox&lt;String&gt;
+~precio = new TextField("Precio del producto:"): TextField
+--
++Main(AlmacenService service): ctor
+-submitOrder(): void
+-init(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>60</y>
+      <w>220</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>com.vaadin.tshirtshop::Modificar
+--
+--
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
