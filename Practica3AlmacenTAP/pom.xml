@@ -6,7 +6,7 @@
     <artifactId>tshirt-example</artifactId>
     <version>0.1-SNAPSHOT</version>
     <name>T-shirt shope example</name>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -48,28 +48,6 @@
     </dependencyManagement>
 
     <dependencies>
-    <dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-server</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-push</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiled</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-themes</artifactId>
-		</dependency>
 
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -117,7 +95,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
